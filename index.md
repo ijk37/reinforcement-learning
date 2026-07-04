@@ -7,15 +7,6 @@ hide:
 
 A beginner-to-mastery study companion to **_Reinforcement Learning: An Introduction_ (2nd ed.)** by **Sutton &amp; Barto** — organized as three tightly-linked layers: **read the theory → test yourself → run the code.**
 
-<div class="resource-hub-nav" markdown>
-
-[:octicons-home-16: Home](https://ijk37.com/){ .hub-nav-button .hub-nav-home }
-
-[:octicons-graph-16: Data Science & AI](https://ijk37.com/data-science-ai/){ .hub-nav-button .hub-nav-dsai }
-
-[:octicons-shield-lock-16: Cyber Security](https://ijk37.com/cyber-security/){ .hub-nav-button .hub-nav-cyber }
-
-</div>
 <div class="rl-hero-grid" markdown>
 
 [:octicons-book-16: Notes](01-notes/README.md){ .rl-card .rl-card-notes }
