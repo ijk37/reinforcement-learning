@@ -16,3 +16,6 @@ QUESTIONS["mixed-2"] = ["09", "10", "11", "12", "13", "14", "15", "16", "17"]
 
 // Mixed 3 — Full Book Review (all chapters)
 QUESTIONS["mixed-3"] = _chapterKeys.flatMap((id) => QUESTIONS[id] || []);
+
+// Mixed 4 — Comprehensive Final (all chapters; draws a fresh 100 each attempt)
+QUESTIONS["mixed-4"] = _chapterKeys.flatMap((id) => QUESTIONS[id] || []);

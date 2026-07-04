@@ -28,6 +28,7 @@ const TOPICS = [
   { id: "mixed-1", title: "Mixed Quiz 1 — Foundations & Tabular" },
   { id: "mixed-2", title: "Mixed Quiz 2 — Approximation & Beyond" },
   { id: "mixed-3", title: "Mixed Quiz 3 — Full Book Review" },
+  { id: "mixed-4", title: "Mixed Quiz 4 — Comprehensive Final" },
 ];
 
 // ── Quiz sizing ─────────────────────────────────────────────────────────────
@@ -35,11 +36,12 @@ const TOPICS = [
 // pool (re-picked on every retry). If a pool is smaller than the configured
 // size, the whole pool is used. Override per attempt with a ?n= URL parameter.
 const QUIZ_CONFIG = {
-  defaultAttempt: 10,
-  attempt: {
-    "mixed-1": 20,
-    "mixed-2": 20,
-    "mixed-3": 30,
+  defaultAttempt: 25,        // random questions per attempt for chapter quizzes
+  attempt: {                 // per-topic overrides (mixed quizzes stay large)
+    "mixed-1": 50,
+    "mixed-2": 75,
+    "mixed-3": 100,
+    "mixed-4": 100,
   },
 };
 
