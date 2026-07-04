@@ -1,0 +1,190 @@
+/* ── Reinforcement Learning · cyberpunk cyan + neon green + robot purple ──── */
+/*
+ * Design goal: cyberpunk energy that stays EYE-SOOTHING.
+ * - Light mode uses deep, desaturated tones (readable on white, low glare).
+ * - Dark mode reserves the true neon glow (cyan/green/purple) where it belongs:
+ *   luminous accents on a near-black slate. Classic cyberpunk, easy on the eyes.
+ */
+
+:root {
+  /* Cyberpunk Cyan (primary / lead) */
+  --rl-cyan: #0c93a8;
+  --rl-cyan-deep: #076576;
+  --rl-cyan-bright: #22d3ee;
+
+  /* Neon Green (positive-reward accent) */
+  --rl-green: #10b981;
+  --rl-green-deep: #0a8f68;
+  --rl-green-bright: #34e5a1;
+
+  /* Robot Purple (secondary accent) */
+  --rl-purple: #7c6cf0;
+  --rl-purple-deep: #5b4bd6;
+  --rl-purple-bright: #a78bfa;
+
+  --rl-ink: #0b1220;
+  --rl-border: rgba(11, 18, 32, 0.14);
+
+  /* Drive Material's primary (header/nav/footer) and accent (links/hover).
+     Deep cyan primary + deep green accent → calm and readable in light mode. */
+  --md-primary-fg-color: #0c93a8;
+  --md-primary-fg-color--light: #22d3ee;
+  --md-primary-fg-color--dark: #076576;
+  --md-accent-fg-color: #0a8f68;
+}
+
+[data-md-color-scheme="slate"] {
+  --rl-border: rgba(120, 220, 255, 0.16);
+
+  /* Cyberpunk night: deep blue-black surfaces so the neon reads as "glow". */
+  --md-default-bg-color: #0b1220;
+  --md-primary-fg-color: #0c93a8;
+  --md-primary-fg-color--light: #22d3ee;
+  --md-primary-fg-color--dark: #076576;
+
+  /* On dark, links + hover get the true neon so the palette comes alive. */
+  --md-accent-fg-color: #34e5a1;
+  --md-typeset-a-color: #22d3ee;
+}
+
+/* ── Header / tabs: two-tone neon underline ───────────────────────────────── */
+.md-header,
+.md-tabs {
+  box-shadow: none;
+}
+
+/* thin gradient hairline (cyan → green → purple) under the header/tabs */
+.md-tabs {
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, var(--rl-cyan-bright), var(--rl-green-bright), var(--rl-purple-bright)) 1;
+}
+
+.md-header__title {
+  font-weight: 700;
+}
+
+/* ── Typography ───────────────────────────────────────────────────────────── */
+.md-typeset h1,
+.md-typeset h2 {
+  font-weight: 750;
+  letter-spacing: 0;
+}
+
+.md-typeset h1 {
+  margin-bottom: 0.9rem;
+  color: var(--rl-cyan-deep);
+}
+
+[data-md-color-scheme="slate"] .md-typeset h1 {
+  color: var(--rl-cyan-bright);
+}
+
+.md-typeset h2 {
+  border-bottom: 2px solid var(--rl-green);
+  padding-bottom: 0.35rem;
+}
+
+[data-md-color-scheme="slate"] .md-typeset h2 {
+  border-bottom-color: var(--rl-green-bright);
+}
+
+/* ── Tables ───────────────────────────────────────────────────────────────── */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--rl-border);
+  border-radius: 0.4rem;
+  overflow: hidden;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--rl-cyan-deep);
+  color: #fff;
+  font-weight: 700;
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+  background: linear-gradient(90deg, var(--rl-cyan-deep), var(--rl-purple-deep));
+}
+
+.md-typeset code {
+  border-radius: 0.25rem;
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 0.45rem;
+}
+
+/* purple left rule on blockquotes — the "note from the agent" accent */
+.md-typeset blockquote {
+  border-left: 0.2rem solid var(--rl-purple);
+}
+
+[data-md-color-scheme="slate"] .md-typeset blockquote {
+  border-left-color: var(--rl-purple-bright);
+}
+
+/* ── Home hero cards ──────────────────────────────────────────────────────── */
+.rl-hero-grid {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  margin: 1.5rem 0 2rem;
+}
+
+.md-typeset .rl-card {
+  align-items: center;
+  border: 1px solid var(--rl-border);
+  border-left: 0.35rem solid var(--rl-cyan);
+  border-radius: 0.5rem;
+  color: var(--md-default-fg-color);
+  display: flex;
+  font-size: 1.05rem;
+  font-weight: 700;
+  gap: 0.55rem;
+  min-height: 5rem;
+  padding: 1rem;
+  text-decoration: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+
+.md-typeset .rl-card:hover {
+  border-color: var(--rl-green);
+  box-shadow: 0 0.55rem 1.4rem rgba(12, 147, 168, 0.22);
+  transform: translateY(-2px);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .rl-card:hover {
+  box-shadow: 0 0 0.2rem var(--rl-cyan-bright), 0 0.55rem 1.4rem rgba(34, 211, 238, 0.25);
+}
+
+/* one accent color per section — cyan / green / purple cycle */
+.md-typeset .rl-card-notes {
+  border-left-color: var(--rl-cyan);
+}
+.md-typeset .rl-card-exercises {
+  border-left-color: var(--rl-green);
+}
+.md-typeset .rl-card-projects {
+  border-left-color: var(--rl-purple);
+}
+.md-typeset .rl-card-resources {
+  border-left-color: var(--rl-cyan-deep);
+}
+
+.md-nav__item .md-nav__link--active {
+  font-weight: 700;
+}
+
+.md-footer {
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 44.9375em) {
+  .rl-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .md-typeset .rl-card {
+    min-height: 4.25rem;
+  }
+}

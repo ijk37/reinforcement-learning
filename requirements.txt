@@ -1,0 +1,8 @@
+# Build dependencies for the MkDocs (Material) site.
+#   pip install -r requirements.txt
+#
+# To RUN the Python projects instead, install their deps:
+#   pip install -r 03-projects/requirements.txt   (numpy required, matplotlib optional)
+mkdocs-material>=9.5
+mkdocs-callouts>=1.13
+mkdocs-same-dir>=0.1.3

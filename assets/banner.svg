@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 260" width="1200" height="260" role="img" aria-label="Reinforcement Learning">
+  <defs>
+    <linearGradient id="rl-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="0.55" stop-color="#0f2233"/>
+      <stop offset="1" stop-color="#08303a"/>
+    </linearGradient>
+    <linearGradient id="rl-accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="0.5" stop-color="#34e5a1"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <filter id="rl-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- background -->
+  <rect x="0" y="0" width="1200" height="260" rx="20" fill="url(#rl-bg)"/>
+  <!-- neon bottom accent -->
+  <rect x="0" y="248" width="1200" height="12" fill="url(#rl-accent)"/>
+
+  <!-- agent ⇄ environment loop motif (right side) -->
+  <g filter="url(#rl-glow)" fill="none" stroke-width="3">
+    <!-- loop arrows -->
+    <path d="M 985 96 A 60 60 0 1 1 1075 96" stroke="#22d3ee" opacity="0.9"/>
+    <path d="M 1075 164 A 60 60 0 1 1 985 164" stroke="#34e5a1" opacity="0.9"/>
+    <path d="M 1075 96 l 10 -14 l 6 18 z" fill="#22d3ee" stroke="none"/>
+    <path d="M 985 164 l -10 14 l -6 -18 z" fill="#34e5a1" stroke="none"/>
+  </g>
+  <!-- nodes -->
+  <g filter="url(#rl-glow)">
+    <circle cx="985" cy="130" r="10" fill="#22d3ee"/>
+    <circle cx="1075" cy="130" r="10" fill="#a78bfa"/>
+  </g>
+  <text x="985" y="134" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#0b1220">A</text>
+  <text x="1075" y="134" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#0b1220">E</text>
+
+  <!-- small neural scatter -->
+  <g fill="#34e5a1" opacity="0.7">
+    <circle cx="1128" cy="70" r="4"/>
+    <circle cx="1150" cy="120" r="5"/>
+    <circle cx="1120" cy="170" r="4"/>
+  </g>
+  <g stroke="#a78bfa" stroke-width="1.5" opacity="0.35" fill="none">
+    <line x1="1128" y1="70" x2="1150" y2="120"/>
+    <line x1="1150" y1="120" x2="1120" y2="170"/>
+  </g>
+
+  <!-- text -->
+  <text x="64" y="86" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="4" fill="#34e5a1">REINFORCEMENT LEARNING &#183; SELF-PACED STUDY</text>
+  <text x="60" y="158" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="66" font-weight="800" fill="#ffffff">Reinforcement Learning</text>
+  <text x="64" y="205" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="26" font-weight="500" fill="#8fd6e6">Notes &#183; Exercises &#183; Runnable Projects</text>
+</svg>

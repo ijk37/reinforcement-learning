@@ -1,0 +1,227 @@
+site_name: Reinforcement Learning
+site_description: "A beginner-to-mastery study companion to Sutton & Barto's Reinforcement Learning: An Introduction — notes, exercises, and runnable projects."
+site_author: Jahid
+site_url: https://ijk37.com/reinforcement-learning/
+
+repo_name: ijk37/reinforcement-learning
+repo_url: https://github.com/ijk37/reinforcement-learning
+edit_uri: edit/main/
+
+docs_dir: .
+site_dir: ../reinforcement-learning-site
+use_directory_urls: false
+exclude_docs: |
+  mkdocs.yml
+  requirements.txt
+  .gitignore
+  .claude/**
+  .git/**
+  .venv/**
+  **/__pycache__/**
+  **/*.py
+  04-projects/requirements.txt
+  03-quiz/README.md
+  05-resources/**
+  !05-resources/README.md
+  tools/**
+  assets/site_design.md
+  01-notes.md
+  02-exercises.md
+  03-quiz.md
+  04-projects.md
+  05-resources.md
+
+theme:
+  name: material
+  custom_dir: overrides
+  logo: assets/images/rl-logo.svg
+  favicon: assets/images/favicon.svg
+  language: en
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.code.copy
+    - content.code.select
+    - content.tabs.link
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.path
+    - navigation.top
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+
+plugins:
+  - same-dir
+  - search
+  - callouts
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.blocks.caption
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra_javascript:
+  - assets/javascripts/extra.js
+  - assets/javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ijk37/reinforcement-learning
+      name: GitHub repository
+
+not_in_nav: |
+  README.md
+
+nav:
+  - Home: index.md
+  - Notes:
+      - Overview: 01-notes/README.md
+      - "Part 0 · Foundations":
+          - "1.1 What Is Reinforcement Learning?": 01-notes/01-01-what-is-reinforcement-learning.md
+          - "1.2 Elements of RL": 01-notes/01-02-elements-of-rl.md
+          - "1.3 Tic-Tac-Toe Example": 01-notes/01-03-tic-tac-toe-example.md
+          - "2.1 The k-armed Bandit Problem": 01-notes/02-01-k-armed-bandit-problem.md
+          - "2.2 Action-value Methods": 01-notes/02-02-action-value-methods.md
+          - "2.3 Incremental Implementation & Nonstationarity": 01-notes/02-03-incremental-implementation-and-nonstationarity.md
+          - "2.4 Optimistic Initial Values & UCB": 01-notes/02-04-optimistic-initial-values-and-ucb.md
+          - "2.5 Gradient Bandit Algorithms": 01-notes/02-05-gradient-bandit-algorithms.md
+          - "2.6 Contextual Bandits & Summary": 01-notes/02-06-contextual-bandits-and-summary.md
+      - "Part I · Tabular Solution Methods":
+          - "3.1 The Agent–Environment Interface": 01-notes/03-01-agent-environment-interface.md
+          - "3.2 Goals, Rewards, and Returns": 01-notes/03-02-goals-rewards-and-returns.md
+          - "3.3 Policies and Value Functions": 01-notes/03-03-policies-and-value-functions.md
+          - "3.4 The Bellman Equations": 01-notes/03-04-bellman-equations.md
+          - "3.5 Optimal Policies & Value Functions": 01-notes/03-05-optimal-policies-and-value-functions.md
+          - "4.1 Iterative Policy Evaluation": 01-notes/04-01-policy-evaluation.md
+          - "4.2 Policy Improvement & Policy Iteration": 01-notes/04-02-policy-improvement-and-policy-iteration.md
+          - "4.3 Value Iteration": 01-notes/04-03-value-iteration.md
+          - "4.4 Async DP, GPI & Efficiency": 01-notes/04-04-async-dp-gpi-and-efficiency.md
+          - "5.1 Monte Carlo Prediction": 01-notes/05-01-monte-carlo-prediction.md
+          - "5.2 MC Action Values & Exploring Starts": 01-notes/05-02-mc-action-values-and-exploring-starts.md
+          - "5.3 MC Control without Exploring Starts": 01-notes/05-03-mc-control-without-exploring-starts.md
+          - "5.4 Off-policy Prediction via Importance Sampling": 01-notes/05-04-off-policy-prediction-importance-sampling.md
+          - "5.5 Off-policy MC Control & Summary": 01-notes/05-05-off-policy-mc-control-and-summary.md
+          - "6.1 TD Prediction": 01-notes/06-01-td-prediction.md
+          - "6.2 Optimality of TD(0)": 01-notes/06-02-optimality-of-td0.md
+          - "6.3 Sarsa: On-policy TD Control": 01-notes/06-03-sarsa-on-policy-td-control.md
+          - "6.4 Q-learning & Expected Sarsa": 01-notes/06-04-q-learning-and-expected-sarsa.md
+          - "6.5 Maximization Bias & Double Learning": 01-notes/06-05-maximization-bias-and-double-learning.md
+          - "7.1 n-step TD Prediction": 01-notes/07-01-n-step-td-prediction.md
+          - "7.2 n-step Sarsa": 01-notes/07-02-n-step-sarsa.md
+          - "7.3 n-step Off-policy & Tree Backup": 01-notes/07-03-n-step-off-policy-and-tree-backup.md
+          - "8.1 Models and Planning": 01-notes/08-01-models-and-planning.md
+          - "8.2 Dyna-Q": 01-notes/08-02-dyna-q.md
+          - "8.3 Prioritized Sweeping & Update Choices": 01-notes/08-03-prioritized-sweeping-and-update-choices.md
+          - "8.4 Trajectory Sampling & RTDP": 01-notes/08-04-trajectory-sampling-and-rtdp.md
+          - "8.5 Decision-time Planning & MCTS": 01-notes/08-05-decision-time-planning-and-mcts.md
+      - "Part II · Approximate Solution Methods":
+          - "9.1 Value-function Approximation": 01-notes/09-01-value-function-approximation.md
+          - "9.2 Gradient & Semi-gradient Methods": 01-notes/09-02-gradient-and-semi-gradient-methods.md
+          - "9.3 Linear Methods & the TD Fixed Point": 01-notes/09-03-linear-methods.md
+          - "9.4 Feature Construction": 01-notes/09-04-feature-construction.md
+          - "9.5 Nonlinear & Other Methods": 01-notes/09-05-nonlinear-and-other-methods.md
+          - "10.1 Episodic Semi-gradient Control": 01-notes/10-01-episodic-semi-gradient-control.md
+          - "10.2 The Average-Reward Setting": 01-notes/10-02-average-reward-setting.md
+          - "11.1 Off-policy Challenges & the Deadly Triad": 01-notes/11-01-off-policy-challenges-and-deadly-triad.md
+          - "11.2 Bellman Error & Value Geometry": 01-notes/11-02-bellman-error-and-value-geometry.md
+          - "11.3 Gradient-TD & Emphatic-TD": 01-notes/11-03-gradient-td-and-emphatic-td.md
+          - "12.1 The λ-return": 01-notes/12-01-lambda-return.md
+          - "12.2 TD(λ) & Eligibility Traces": 01-notes/12-02-td-lambda.md
+          - "12.3 True Online TD(λ)": 01-notes/12-03-true-online-td-lambda.md
+          - "12.4 Sarsa(λ) & Off-policy Traces": 01-notes/12-04-sarsa-lambda-and-off-policy-traces.md
+          - "13.1 Policy Approximation & Advantages": 01-notes/13-01-policy-approximation-and-advantages.md
+          - "13.2 The Policy Gradient Theorem": 01-notes/13-02-policy-gradient-theorem.md
+          - "13.3 REINFORCE & Baseline": 01-notes/13-03-reinforce-and-baseline.md
+          - "13.4 Actor–Critic & Continuous Actions": 01-notes/13-04-actor-critic-and-continuous-actions.md
+      - "Part III · Looking Deeper":
+          - "14.1 Classical Conditioning & the TD Model": 01-notes/14-01-classical-conditioning-and-td-model.md
+          - "14.2 Instrumental Conditioning & Behavior": 01-notes/14-02-instrumental-conditioning-and-behavior.md
+          - "15.1 Dopamine & Reward Prediction Error": 01-notes/15-01-dopamine-and-reward-prediction-error.md
+          - "15.2 Neural Actor–Critic & Brain RL": 01-notes/15-02-neural-actor-critic-and-brain-rl.md
+          - "16.1 TD-Gammon, Atari & AlphaGo": 01-notes/16-01-applications-td-gammon-atari-alphago.md
+          - "17.1 Frontiers and the Future": 01-notes/17-01-frontiers-and-future.md
+  - Exercises:
+      - Overview: 02-exercises/README.md
+      - "Ch 1 · Introduction": 02-exercises/01-introduction-exercises.md
+      - "Ch 2 · Multi-armed Bandits": 02-exercises/02-bandits-exercises.md
+      - "Ch 3 · Finite MDPs": 02-exercises/03-mdps-exercises.md
+      - "Ch 4 · Dynamic Programming": 02-exercises/04-dynamic-programming-exercises.md
+      - "Ch 5 · Monte Carlo": 02-exercises/05-monte-carlo-exercises.md
+      - "Ch 6 · Temporal-Difference": 02-exercises/06-temporal-difference-exercises.md
+      - "Ch 7 · n-step Bootstrapping": 02-exercises/07-n-step-bootstrapping-exercises.md
+      - "Ch 8 · Planning and Learning": 02-exercises/08-planning-and-learning-exercises.md
+      - "Ch 9 · On-policy Prediction": 02-exercises/09-on-policy-prediction-approximation-exercises.md
+      - "Ch 10 · On-policy Control": 02-exercises/10-on-policy-control-approximation-exercises.md
+      - "Ch 11 · Off-policy Approximation": 02-exercises/11-off-policy-approximation-exercises.md
+      - "Ch 12 · Eligibility Traces": 02-exercises/12-eligibility-traces-exercises.md
+      - "Ch 13 · Policy Gradient": 02-exercises/13-policy-gradient-exercises.md
+      - "Ch 14 · Psychology": 02-exercises/14-psychology-exercises.md
+      - "Ch 15 · Neuroscience": 02-exercises/15-neuroscience-exercises.md
+      - "Ch 16 · Applications": 02-exercises/16-applications-exercises.md
+      - "Ch 17 · Frontiers": 02-exercises/17-frontiers-exercises.md
+  - Quiz: 03-quiz/index.html
+  - Projects:
+      - Overview: 04-projects/README.md
+      - "1 · Ten-armed Testbed": 04-projects/01-ten-armed-bandit/README.md
+      - "2 · Gridworld DP": 04-projects/02-gridworld-dp/README.md
+      - "3 · Blackjack Monte Carlo": 04-projects/03-blackjack-monte-carlo/README.md
+      - "4 · Cliff & Windy TD": 04-projects/04-cliff-and-windy-td/README.md
+      - "5 · Dyna Maze": 04-projects/05-dyna-maze/README.md
+      - "6 · Mountain Car (Tile Coding)": 04-projects/06-mountain-car-tilecoding/README.md
+      - "7 · Random Walk TD(λ)": 04-projects/07-random-walk-td-lambda/README.md
+      - "8 · CartPole Actor–Critic": 04-projects/08-cartpole-actor-critic/README.md
+  - Resources: 05-resources/README.md
